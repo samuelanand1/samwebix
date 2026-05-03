@@ -1,0 +1,65 @@
+/* Portfolio page */
+
+.section__heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.portfolio__intro {
+  margin: 0 0 clamp(1rem, 3vw, 1.5rem);
+  color: var(--text-muted);
+  max-width: 52ch;
+  font-size: clamp(0.88rem, 2vw, 0.95rem);
+}
+
+.portfolio__grid {
+  display: grid;
+  gap: clamp(0.85rem, 2.5vw, 1.25rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.portfolio-card {
+  position: relative;
+  padding: clamp(1.15rem, 3vw, 1.5rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(160deg, rgba(20, 30, 60, 0.5), rgba(8, 12, 28, 0.8));
+  overflow: hidden;
+  min-height: clamp(120px, 25vw, 140px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.portfolio-card__shine {
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 120deg, transparent, rgba(0, 180, 255, 0.08), transparent 40%);
+  animation: portfolio-spin 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes portfolio-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.portfolio-card__title {
+  position: relative;
+  margin: 0 0 0.35rem;
+  font-size: clamp(0.92rem, 2.2vw, 1rem);
+  font-weight: 700;
+}
+
+.portfolio-card__meta {
+  position: relative;
+  margin: 0;
+  font-size: clamp(0.75rem, 1.8vw, 0.8rem);
+  color: var(--text-muted);
+}
